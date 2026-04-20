@@ -3,7 +3,7 @@
   "name": "Quick-Plot Selection",
   "icon": "office-chart-line",
   "executable": "python3",
-  "arguments": ["%{ENV:HOME}/.local/bin/kate_quickplot.py"],
+  "arguments": ["%{ENV:HOME}/.local/bin/kate_quickplot.py --title %{Document:FileName}"],
   "input": "%{Document:Selection:Text}",
   "output": "Ignore",
   "workingDir": "%{Document:Path}",

@@ -50,9 +50,11 @@ use e.g. `Ctrl+rAlt+P` → Apply.
 
 ## 4. Use it
 
-Select text, either by block mode or normal. If one columns selected → plot versus line number
-If X,Y1,Y2,Y3 etc selected → plot with (X, Y1, Y2, etc) legend.
-If header in columns included → plot with (header X, header Y1, header Y2, etc) legend.
+Select text, either by block mode or normal.
+
+\item If one columns selected → plot versus line number
+\item If X,Y1,Y2,Y3 etc selected → plot with (X, Y1, Y2, etc) legend.
+\item If header in columns included → plot with (header X, header Y1, header Y2, etc) legend.
 
 
 Supported separators (auto-detected): spaces, tabs, commas, semicolons.

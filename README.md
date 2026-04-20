@@ -58,6 +58,7 @@ Select text, either by block mode or normal.
 - If X,Y1,Y2,Y3 etc selected → plot with (X, Y1, Y2, etc) legend.
 - If header in columns included → plot with (header X, header Y1, header Y2, etc) legend.
 
+![image](example.png)
 
 Supported separators (auto-detected): spaces, tabs, commas, semicolons.
 

@@ -5,16 +5,7 @@ Vibe-coded Kate plugin.
 Select two (or more) columns of numbers in Kate, hit a shortcut, get an instant Y-vs-X plot.
 Built for visually inspecting convergence / residual output files.
 
-## 1. Install Kate
-
-```bash
-# Debian/Ubuntu
-sudo apt install kate python3-matplotlib python3-numpy
-# Arch
-sudo pacman -S kate python-matplotlib python-numpy
-# Fedora
-sudo dnf install kate python3-matplotlib python3-numpy
-```
+## 1. Install Kate and matplotlib
 
 ## 2. Install the plot script
 

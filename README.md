@@ -1,4 +1,4 @@
-# Kate Quick-Plot
+# KDE Kate Quick-Plot plugin 
 
 Select two (or more) columns of numbers in Kate, hit a shortcut, get an instant Y-vs-X plot.
 Built for visually inspecting convergence / residual output files.
@@ -16,6 +16,7 @@ sudo dnf install kate python3-matplotlib python3-numpy
 
 ## 2. Install the plot script
 
+For example in:
 ```bash
 mkdir -p ~/.local/bin
 cp kate_quickplot.py ~/.local/bin/
@@ -24,16 +25,16 @@ chmod +x ~/.local/bin/kate_quickplot.py
 
 ## 3. Register the External Tool in Kate
 
-Kate → **Settings → Configure Kate → External Tools → New…**
+Kate → **Settings → Configure Kate → External Tools → Add…**
 
-Fill in exactly:
+Fill in:
 
 | Field         | Value                                  |
 | ------------- | -------------------------------------- |
 | Name          | `Quick-Plot Selection`                 |
 | Icon          | `office-chart-line` (any icon is fine) |
 | Executable    | `python3`                              |
-| Arguments     | `%{ENV:HOME}/.local/bin/kate_quickplot.py` |
+| Arguments     | `%{ENV:HOME}/.local/bin/kate_quickplot.py --title %{Document:FileName}` |
 | Input         | `%{Document:Selection:Text}`           |
 | Output        | Ignore                                 |
 | Working Dir   | `%{Document:Path}`                     |
@@ -45,20 +46,14 @@ text into the script's stdin — exactly what `kate_quickplot.py` expects.
 ### Assign the keyboard shortcut
 
 Settings → Configure Shortcuts  → Quick-Plot Selection →
-use e.g. `Ctrl+Alt+P` → Apply.
+use e.g. `Ctrl+rAlt+P` → Apply.
 
 ## 4. Use it
 
-1. Open a file containing two-column numeric data (OpenFOAM log residuals, preCICE
-   iteration counters, anything).
-2. Select the rows you want to plot (comment lines starting with `#`, `//`, `%`
-   are skipped automatically).
-3. Press `Ctrl+Alt+P`. A matplotlib window pops up with Y vs X.
+Select text, either by block mode or normal. If one columns selected → plot versus line number
+If X,Y1,Y2,Y3 etc selected → plot with (X, Y1, Y2, etc) legend.
+If header in columns included → plot with (header X, header Y1, header Y2, etc) legend.
+
 
 Supported separators (auto-detected): spaces, tabs, commas, semicolons.
 
-## Troubleshooting
-
-- **Nothing happens** → open Kate from a terminal; stderr from the script prints there.
-- **No plot window on a remote/Wayland session** → ensure `$DISPLAY` (X11) or
-  `$WAYLAND_DISPLAY` is set for Kate; matplotlib's Qt/Tk backends need it.

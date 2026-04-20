@@ -1,5 +1,4 @@
 # Sample convergence residuals (iteration, residual)
-# Mimics an OpenFOAM-style log excerpt
 # normal X-Y no headers
 1   1.0000e+00
 2   6.5000e-01

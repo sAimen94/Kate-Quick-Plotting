@@ -1,5 +1,7 @@
 # KDE Kate Quick-Plot plugin 
 
+Vibe-coded Kate plugin.
+
 Select two (or more) columns of numbers in Kate, hit a shortcut, get an instant Y-vs-X plot.
 Built for visually inspecting convergence / residual output files.
 
@@ -46,7 +48,7 @@ text into the script's stdin — exactly what `kate_quickplot.py` expects.
 ### Assign the keyboard shortcut
 
 Settings → Configure Shortcuts  → Quick-Plot Selection →
-use e.g. `Ctrl+rAlt+P` → Apply.
+use e.g. `Ctrl+Alt-Gr+P` → Apply.
 
 ## 4. Use it
 

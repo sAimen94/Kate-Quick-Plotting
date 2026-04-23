@@ -27,7 +27,7 @@ Fill in:
 | Name          | `Quick-Plot Selection`                 |
 | Icon          | `office-chart-line` (any icon is fine) |
 | Executable    | `python3`                              |
-| Arguments     | `%{ENV:HOME}/.local/bin/kate_quickplot.py --title %{Document:FileName}` |
+| Arguments     | `%{ENV:HOME}/.local/bin/kate_quickplot.py --title "%{Document:FileName}"` |
 | Input         | `%{Document:Selection:Text}`           |
 | Output        | Ignore                                 |
 | Working Dir   | `%{Document:Path}`                     |

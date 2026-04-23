@@ -122,6 +122,8 @@ def main():
     ap.add_argument("--title", default="Kate Quick-Plot",
                     help="plot title; pass %%{Document:FileName} from Kate")
     args = ap.parse_args()
+    if not args.title:
+        args.title = "Kate Quick-Plot"
 
     text = sys.stdin.read()
     if not text.strip():

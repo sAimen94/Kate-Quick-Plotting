@@ -53,3 +53,29 @@ Select text, either by block mode or normal.
 
 Supported separators (auto-detected): spaces, tabs, commas, semicolons.
 
+## 5. Interactive controls (in the plot window):
+    Left-click a legend entry   : show/hide that curve
+    Right-click a legend entry  : mark it as a "relative error" source
+                                   (fraction, e.g. 0.05 = 5%, not absolute
+                                   sd/std). Then left-click a different
+                                   legend entry to attach that relative
+                                   error to it -> the target curve is
+                                   redrawn as an errorbar plot with
+                                   yerr = y * relative_error, and both
+                                   original curves are hidden.
+    'a'                          : show all curves (does not undo pairings)
+    'u'                          : undo the most recent error-bar pairing
+    'r'                          : full reset (undo all pairings, show all)
+    't'                          : arm/disarm threshold-line placement mode;
+                                   while armed, left-click anywhere on the
+                                   axes (not on a legend entry) to draw a
+                                   dashed horizontal line at that y-value.
+                                   Pressing 't' again while a line exists
+                                   removes it instead of re-arming.
+    'm'                          : toggle a moving-average overlay (dashed,
+                                   same color, thinner) on all currently
+                                   visible curves. Window size is auto-set
+                                   to max(3, npoints // 20).
+    Plot axes autoscale to only the currently visible curves after every
+    toggle or pairing/undo/reset action.
+
